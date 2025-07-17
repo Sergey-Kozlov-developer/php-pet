@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% include 'head/head.twig' %}
+</head>
+<body>
+{% include 'header/header.twig' %}
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+{% include 'footer/footer.twig' %}
+</body>
+</html>

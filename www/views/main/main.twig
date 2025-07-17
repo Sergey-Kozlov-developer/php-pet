@@ -1,0 +1,39 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Главная страница | MySite{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="container">
+            <h1>Добро пожаловать на MySite</h1>
+            <p class="lead">Лучшее решение для вашего бизнеса</p>
+            <div class="cta-buttons">
+                <a href="{{ host }}/register" class="btn btn-primary">Начать</a>
+                <a href="{{ host }}/about" class="btn btn-outline">Узнать больше</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Наши преимущества</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Быстро</h3>
+                    <p>Наши решения работают молниеносно</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Безопасно</h3>
+                    <p>Защита данных на высшем уровне</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Гибко</h3>
+                    <p>Подстройка под ваши потребности</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

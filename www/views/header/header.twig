@@ -1,0 +1,28 @@
+<header class="site-header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="{{ host }}" class="logo">MySite</a>
+
+            <ul class="nav-links">
+                <li><a href="{{ host }}" class="{{ current_page == 'main' ? 'active' }}">Главная</a></li>
+                <li><a href="{{ host }}about" class="{{ current_page == 'about' ? 'active' }}">О нас</a></li>
+
+                {% if session.user %}
+                    <li class="user-menu">
+                        <span class="username">{{ session.user.name }}</span>
+                        <a href="{{ host }}logout" class="btn btn-outline">Выйти</a>
+                    </li>
+                {% else %}
+                    <li><a href="{{ host }}login" class="{{ current_page == 'login' ? 'active' }}">Войти</a></li>
+                    <li><a href="{{ host }}register" class="btn btn-primary {{ current_page == 'register' ? 'active' }}">Регистрация</a></li>
+                {% endif %}
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+</header>

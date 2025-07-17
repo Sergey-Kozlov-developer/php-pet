@@ -1,0 +1,42 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Вход | MySite{% endblock %}
+
+{% block content %}
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-form">
+                <h1>Вход в систему</h1>
+
+                {% if session.errors.login %}
+                    <div class="alert alert-danger">
+                        {{ session.errors.login }}
+                    </div>
+                {% endif %}
+
+                {% if session.success.register %}
+                    <div class="alert alert-success">
+                        {{ session.success.register }}
+                    </div>
+                {% endif %}
+
+                <form action="{{ host }}/auth/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                        <a href="{{ host }}/register" class="btn btn-link">Нет аккаунта? Зарегистрируйтесь</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
