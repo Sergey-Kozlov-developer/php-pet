@@ -23,19 +23,19 @@ $module = getModuleName();
 switch ($module) {
     case '':
     case 'main':
-        echo $twig->render('main/main.twig', $twigData);
+        echo $twig->render('pages/main/main.twig', $twigData);
         break;
 
     case 'about':
-        echo $twig->render('about/about.twig', $twigData);
+        echo $twig->render('pages/about/about.twig', $twigData);
         break;
 
     case 'login':
-        echo $twig->render('login/login.twig', $twigData);
+        echo $twig->render('users/login/login.twig', $twigData);
         break;
 
     case 'register':
-        echo $twig->render('login/register.twig', $twigData);
+        echo $twig->render('users/login/register.twig', $twigData);
         break;
 
     default:

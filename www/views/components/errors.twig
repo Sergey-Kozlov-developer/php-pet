@@ -1,0 +1,18 @@
+
+
+{#// Проверка что массив $errors НЕ пуст, значит есть ошиьки на вывод#}
+
+
+{% if session.errors is defined and session.errors is iterable %}
+    <div class="notifications">
+        {% for error in session.errors %}
+            {% if error is iterable and error.title is defined %}
+                <div class="notifications__title notifications__title--error">
+                    {{ error.title|e }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {# Очищаем ошибки после вывода #}
+    {% set _ = session.remove('errors') %}
+{% endif %}
