@@ -4,6 +4,7 @@
 
 
 {% if session.errors is defined and session.errors is iterable %}
+
     <div class="notifications">
         {% for error in session.errors %}
             {% if error is iterable and error.title is defined %}
